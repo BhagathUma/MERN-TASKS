@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left-buttons {
+            margin-left: -95vh;
+            margin-top: 20px;
+        }
+
+        button {
+            width: 100vh;
+            height: 50px;
+            display: block;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .grn-bttn {
+            background-color: #05A96D;
+            border: 1px solid #05A96D;
+        }
+
+        .blu-bttn {
+            background-color: #2196F3;
+            border: 1px solid #2196F3; 
+        }
+
+        .red-bttn {
+            background-color:#F54339;
+            border: 1px solid #F54339;
+        }
+
+        .gry-bttn {
+            background-color: #565656;
+            border: 1px solid #565656;
+        }
+
+        .bttn:hover {
+            transform: scaleX(1.1);
+            transition: 0.5s;
+        }
+        .bttn:not(:hover) {
+            
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+   <div class="left-buttons">
+    <button class="bttn grn-bttn"></button>
+    <button class="bttn blu-bttn"></button>
+    <button class="bttn red-bttn"></button>
+    <button class="bttn gry-bttn"></button>
+   </div> 
+
+   <div class="right-container">
+    <h1>Hoverable Sidenav Buttons</h1>
+    <p>Hover over the buttons in the left side navigation to open them.</p>
+   </div>
+   <div></div>
+</body>
+</html>

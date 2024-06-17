@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .container{
+    width: 450px;
+    height: 600px;
+    background-color: rgb(247, 247, 247);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 12px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .lo{
+    width: 400px;
+    margin-bottom: -5px;
+    height: 30px;
+  }
+  h4{
+    margin-bottom: 0px;
+  }
+ 
+  img{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+  }
+  #log{
+    width: 410px;
+    height: 30px;
+    background-color: #4DB151;
+    border: 1px #4DB151;
+    border-radius: 6px;
+  }
+  #rem{
+    width: 400px;
+    height: 30px;
+  }
+  #last{
+    width: 400px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    background-color: rgb(211, 211, 211);
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+</style>
+<body>
+  <div class="container">
+    <div id="imag"><img src="https://static.vecteezy.com/system/resources/thumbnails/002/387/693/small_2x/user-profile-icon-free-vector.jpg" alt=""></div>
+        <div id="usr">
+            <h4 >Username:</h4><input type="text" placeholder="Enter username" class="lo">
+        </div>
+        <div id="pass">
+            <h4>Password:</h4><input type="password" placeholder="Enter password" class="lo">
+        </div>
+        <button id="log">Login</button>
+        <div id="rem">
+            <input type="checkbox">Remember me
+        </div>
+        <div id="last">
+            <button style="background-color: rgb(230, 8, 8); color: white; border-radius: 4px; border: 0px;height: 30px; width: 60px;">Cancel</button>
+            <a style="color: black; text-decoration: none;">Forgot Password?</a>
+        </div>
+    </div>
+  </div>
+</body>
+</html>
