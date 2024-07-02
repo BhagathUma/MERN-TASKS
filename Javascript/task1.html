@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <script>
+    function Reverse(){
+      var input = document.getElementById('num').value;
+      var ans = parseInt(input.toString().split('').reverse().join(''));
+      document.getElementById('ans').innerHTML = ans+ `<br>` +' BOOM!! REVERSED!!!';
+    }
+  </script>
+</head>
+<body>
+  <h4>Enter some Number<input type="number" id="num"></h4>
+  <button onclick="Reverse()">Reverse</button>
+  <h4 id="ans"></h4>
+</body>
+</html>

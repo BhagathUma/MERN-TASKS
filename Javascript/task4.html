@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <script>
+    function date(){
+      var currentDate = new Date();
+      document.getElementById('date').innerHTML = currentDate.toLocaleDateString();
+    }
+    function time(){
+      var time = new Date();
+      document.getElementById('time').innerHTML =time;
+    }
+  </script>
+</head>
+<body>
+  
+  <button type="button" onclick="date()">Show Date</button>
+  <p id="date"></p>
+  <button type="button" onclick="time()">Show Time</button>
+  <p id="time"></p>
+  
+  
+</body>
+</html>

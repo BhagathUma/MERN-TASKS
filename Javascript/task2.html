@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+  <script>
+    function Sorting() {
+      var input = document.getElementById('inputString').value;
+      var ans = input.toLowerCase().split('').sort().join('');
+      document.getElementById('ans').innerHTML = ans+ `<br>` +'BOOM!! SORTED!!!';
+    }
+  </script>
+</head>
+<body>
+  <h4>Enter a word to sort <input type="text" id="inputString"></h4>
+  
+  <button onclick="Sorting()">Sort</button>
+  <h4 id="ans"></h4>
+</body>
+</html>

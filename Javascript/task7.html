@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      
+      body {
+        background-image: url("https://t4.ftcdn.net/jpg/04/43/77/15/360_F_443771594_9DP9FL6ODKOYZufdI7t7VFY9UUSqmv6E.jpg");
+        margin-top: 5vh;
+      }
+      h1{
+        
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        margin-top: 2vh;
+      }
+      #inp{
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Click the following buttons to handle animation</h1>
+    <div id="inp">
+    <input type="button" value="start" onclick="start()" />
+    <input type="button" value="stop" onclick="stop()" />
+    </div>
+    <br><br><br>
+    <img src="https://media.istockphoto.com/id/1294826724/vector/toy-train-icon.jpg?s=612x612&w=0&k=20&c=rP-gQ9YKkrNBEQURPtUwc4N5db13Zr5NOEsTJ4g-58A=" alt="error" id="mycar" />
+    
+    <script>
+      
+      var animation;
+      function init() {
+        let mycar = document.getElementById("mycar");
+        mycar.style.position = "absolute";
+        mycar.style.left = "0px";
+      }
+      window.onload = init;
+
+      function start() {
+        let mycar = document.getElementById("mycar");
+        mycar.style.left = parseInt(mycar.style.left) + 10 + "px";
+        animation = setTimeout(start, 50);
+      }
+      function stop() {
+        let mycar = document.getElementById("mycar");
+        clearTimeout(animation);
+        mycar.style.left = "paused";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    <h4>Name:<input type="text" name="name" id="name"> <span id="nameError" style="color: red;"></span></h4>
+    <br/>
+    <h4>Email:<input type="email" name="email" id="email"> <span id="emailError" style="color: red;"></span></span></h4>
+    <br/>
+    <h4>Website:<input type="url" name="website" id="website"> <span id="websiteError" style="color: red;"></span></h4>
+    <br/>
+    <h4>Message:<textarea name="message" id="message" rows="5" cols="18"></textarea> <span id="messageError" style="color: red;"></span></h4>
+    <br/>
+    <button type="button" onclick="validateForm()">Submit</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      var nameInput = document.getElementById('name');
+      var emailInput = document.getElementById('email');
+      var websiteInput = document.getElementById('website');
+      var messageTextarea = document.getElementById('message');
+
+      var nameError = document.getElementById('nameError');
+      var emailError = document.getElementById('emailError');
+      var websiteError = document.getElementById('websiteError');
+      var messageError = document.getElementById('messageError');
+
+      nameError.innerHTML = '';
+      emailError.innerHTML = '';
+      websiteError.innerHTML = '';
+      messageError.innerHTML = '';
+
+      if (nameInput.value === '') {
+        nameError.innerHTML = 'Field is required';
+        document.getElementById('name').style.borderColor='red';
+      }
+
+      if (emailInput.value === '') {
+        emailError.innerHTML = 'A valid email is required';
+        document.getElementById('email').style.borderColor='red';
+      } else if (!isValidEmail(emailInput.value)) {
+        emailError.innerHTML = 'A valid email is required';
+        document.getElementById('email').style.borderColor='red';
+      }
+
+      if (websiteInput.value === '') {
+        websiteError.innerHTML = 'A valid URL is required';
+        document.getElementById('website').style.borderColor='red';
+      } else if (!isValidUrl(websiteInput.value)) {
+        websiteError.innerHTML = 'A valid URL is required';
+        document.getElementById('website').style.borderColor='red';
+      }
+
+      if (messageTextarea.value === '') {
+        messageError.innerHTML = 'Field is required';
+        document.getElementById('message').style.borderColor='red';
+      }
+    }
+
+    function isValidEmail(email) {
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+  </script>
+</body>
+</html>

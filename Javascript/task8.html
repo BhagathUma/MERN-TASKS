@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    table {
+        background-image: linear-gradient(lightyellow, rgb(246, 123, 199));
+        padding: 50px;      
+    }
+    input[type="text"],input[type="email"],input[type="password"],input[type="number"]{
+        width: 96%;
+    }
+
+    h1{
+        color: blue;
+    }
+
+    span {
+        color: red;
+    }
+    
+</style>
+
+<script>
+    function validateForm() {
+        var firstName = document.getElementById("first-name").value;
+        var lastName = document.getElementById("last-name").value;
+        var password = document.getElementById("password").value;
+        var rePassword = document.getElementById("re-password").value;
+        var age = document.getElementById('age').value;
+        var phone = document.getElementById('ph-num').value;
+        var address = document.getElementById('address').value;
+        var state = document.getElementById('state').value;
+
+        if (firstName.length < 3) {
+            document.getElementById("first-name-validation").innerHTML = "POOR";
+        } else {
+            document.getElementById("first-name-validation").innerHTML = "GOOD";
+        }
+
+        if (lastName.length < 3) {
+            document.getElementById("last-name-validation").innerHTML = "POOR";
+        } else {
+            document.getElementById("last-name-validation").innerHTML = "GOOD";
+        }
+
+        if (document.getElementById('email').value ==='') {
+            document.getElementById('emailError').innerHTML = 'POOR';
+        }
+        else if (!isValidEmail(document.getElementById('email').value)) {
+            document.getElementById('emailError').innerHTML = 'POOR';
+        }
+
+        if (password.length < 8 || password==='') {
+            document.getElementById("password-validation").innerHTML = "POOR";
+        } 
+
+        if (password !== rePassword || rePassword==='') {
+            document.getElementById("re-password-validation").innerHTML = "POOR OR MISMATCH";
+        } 
+        if (age < 0 || age===''){
+            document.getElementById("age-validation").innerHTML = "POOR";
+        }
+        if (phone ===''){
+            document.getElementById("phone-validation").innerHTML = "POOR";
+        }
+        if (address ===''){
+            document.getElementById("address-validation").innerHTML = "POOR";
+        }
+        if (state ===''){
+            document.getElementById("state-validation").innerHTML = "POOR";
+        }
+    }
+</script>
+<body>
+
+    <center><h1>Registration Form</h1>
+        <form onsubmit="validateForm()">
+            <table>
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" name="first-name" id="first-name"/></td>
+                    <td><span id="first-name-validation"></span></td>
+                </tr>
+
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" name="last-name" id="last-name"/></td>
+                    <td><span id="last-name-validation"></span></td>
+                </tr>
+                
+                <tr>
+                    <td>Email</td>
+                    <td><input type="email" name="email" id="email"/></td>
+                    <td><span id="emailError" style="color: red;"></span></td>
+                    
+                </tr>
+                
+
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" id="password"/></td>
+                    <td><span id="password-validation" style="color: red;"></span></td>
+                </tr>
+
+                <tr>
+                    <td>Re-enter Password</td>
+                    <td><input type="password" name="re-password" id="re-password"/></td>
+                    <td><span id="re-password-validation" style="color: red;"></span></td>
+                </tr>
+
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="gender" id="male" value="male"/>
+                        <label for="male">Male</label><br>
+                        <input type="radio" name="gender" id="female" value="female"/>
+                        <label for="female">Female</label>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number" name="age" id="age"/></td>
+                    <td><span id="age-validation" style="color: red;"></span></td>
+                </tr>
+
+                <tr>
+                    <td>Phone Number</td>
+                    <td><input type="number" name="phone-number" id="ph-num"/></td>
+                    <td><span id="phone-validation" style="color: red;"></span></td>
+                </tr>
+
+                <tr>
+                    <td>Address</td>
+                    <td><textarea name="address" id="address" cols="20" rows="2"></textarea></td>
+                    <td><span id="address-validation" style="color: red;"></span></td>
+                </tr>
+
+                <tr>
+                    <td>State</td>
+                    <td><input type="text" name="state" id="state"/></td>
+                    <td><span id="state-validation" style="color: red;"></span></td>
+                </tr>
+
+                <tr>
+                    <td>Country</td>
+                    <td>
+                        <select name="country" id="country">
+                            <option value="selected" disabled selected>Choose your country</option>
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Australia">Australia</option>
+                        </select>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td>Languages Known</td>
+                    <td>
+                        <input type="checkbox" name="language" name="english" id="english">
+                        <label for="english">English</label>
+
+                        <input type="checkbox" name="language" name="kannada" id="kannada">
+                        <label for="kannada">Kannada</label>
+
+                        <input type="checkbox" name="language" name="hindi" id="hindi">
+                        <label for="hindi">Hindi</label>
+
+                        <input type="checkbox" name="language" name="telugu" id="telugu">
+                        <label for="telugu">Telugu</label>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><input type="checkbox" name="declaration" id="declaration">Herby I declare all the given details are true.</td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" style="text-align: end;">Log in to <a href="https://ethnus.com/">Ethnus</a> website</td>
+                    <td></td>
+                </tr>
+
+                
+            </table>
+            <p ><button type="button" onclick="validateForm()" style="size: 150%; margin-left: auto;margin-right: auto;background-color: red;color: white; border-radius: 15px; border: 2px solid black;">Register</button></p>
+        </form>
+    </center>
+
+</body>
+</html>
